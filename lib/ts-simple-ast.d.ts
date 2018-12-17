@@ -4357,6 +4357,10 @@ export declare class Node<NodeType extends ts.Node = ts.Node> implements TextRan
      */
     forEachChild(cbNode: (node: Node, traversal: ForEachChildTraversalControl) => void, cbNodeArray?: (nodes: Node[], traversal: ForEachChildTraversalControl) => void): void;
     /**
+     * Gets the child nodes passed to the delegate of `node.forEachChild(child => {})` as an array.
+     */
+    forEachChildAsArray(): Node<ts.Node>[];
+    /**
      * Invokes the `cbNode` callback for each descendant and the `cbNodeArray` for every array of nodes stored in properties of the node and descendant nodes.
      * If `cbNodeArray` is not defined, then it will pass every element of the array to `cbNode`.
      *
